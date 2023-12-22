@@ -1,5 +1,5 @@
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 class Dom:
     def __init__(self, params):
@@ -11,11 +11,12 @@ class Dom:
             row_max = max([tup[0] for tup in params["indexes"][key]])
             col_min = min([tup[1] for tup in params["indexes"][key]])
             col_max = max([tup[1] for tup in params["indexes"][key]])
-            self.matrices[key] = np.zeros(row_max - row_min, col_max - col_min)
-            self.matrices[key] = params["mask"][key]
+            self.matrices[key] = np.zeros((row_max - row_min, col_max - col_min))
+            mask = params["mask"][key]
+            self.matrices[key][mask == 1] = 1
 
-        return self
-
+    def build(self):
+        return self.matrices
 
 if __name__ == '__main__':
 
@@ -29,4 +30,5 @@ if __name__ == '__main__':
               "mask": {"I": 1, "II": 0, "III": 1, "IV": 1, "V": 1, "VI": 1}}
 
     dom = Dom(params)
+    print(dom.build())
 
