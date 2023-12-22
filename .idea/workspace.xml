@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4de13ee0-db1b-4303-a438-23a42bf8f0f8" name="New changelist" comment="class" />
+    <list default="true" id="4de13ee0-db1b-4303-a438-23a42bf8f0f8" name="New changelist" comment="poprawa klasy Dom">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dom.py" beforeDir="false" afterPath="$PROJECT_DIR$/dom.py" afterDir="false" />
+    </list>
     <list id="6a600279-1320-4e3b-95e7-179f00bfee14" name="Changes" comment="class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +71,14 @@
       <option name="presentableId" value="Default" />
       <updated>1702920954607</updated>
     </task>
+    <task id="LOCAL-00001" summary="poprawa klasy Dom">
+      <created>1703253754075</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703253754075</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,5 +91,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="poprawa klasy Dom" />
+    <option name="LAST_COMMIT_MESSAGE" value="poprawa klasy Dom" />
   </component>
 </project>
