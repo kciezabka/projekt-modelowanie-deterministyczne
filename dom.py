@@ -15,22 +15,23 @@ class Dom:
             mask = params["mask"][key]
             self.matrices[key][mask == 1] = 1
 
+        self.bigmatrix = np.zeros((100, 100))
+        for key in params["indexes"].keys():
+            row_min = min([tup[0] for tup in params["indexes"][key]])
+            row_max = max([tup[0] for tup in params["indexes"][key]])
+            col_min = min([tup[1] for tup in params["indexes"][key]])
+            col_max = max([tup[1] for tup in params["indexes"][key]])
+
+            self.bigmatrix[row_min:row_max, col_min:col_max] = self.matrices[key]
+
     def build(self):
         return self.matrices.values()
 
     def build2(self):
-        result = np.zeros((100, 100))
-        result[0:35, 0:55] = self.matrices["I"]
-        result[0:35, 55:100] = self.matrices["II"]
-        result[35:65, 0:55] = self.matrices["III"]
-        result[35:65, 55:100] = self.matrices["IV"]
-        result[65:100, 0:55] = self.matrices["V"]
-        result[65:100, 55:100] = self.matrices["VI"]
-        return result
+        return self.bigmatrix
 
 
 if __name__ == '__main__':
-
     params = {"indexes": {"I": [(0, 0), (0, 55), (35, 0), (35, 55)],
                           "II": [(0, 55), (0, 100), (35, 55), (35, 100)],
                           "III": [(35, 0), (35, 55), (65, 0), (65, 55)],
