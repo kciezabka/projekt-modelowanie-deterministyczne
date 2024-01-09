@@ -14,6 +14,9 @@ class Dom:
             self.matrices[key] = np.zeros((row_max - row_min, col_max - col_min))
             mask = params["mask"][key]
             self.matrices[key][mask == 1] = 1
+            mask = params["mask"][key]
+            self.matrices[key][mask == 1] = 1
+
 
         self.bigmatrix = np.zeros((100, 100))
         for key in params["indexes"].keys():
@@ -23,6 +26,13 @@ class Dom:
             col_max = max([tup[1] for tup in params["indexes"][key]])
 
             self.bigmatrix[row_min:row_max, col_min:col_max] = self.matrices[key]
+
+        #for key in params["wall"].keys():
+         #   w_row_min = min([tup[0] for tup in params["wall"][key]])
+          #  w_row_max = max([tup[0] for tup in params["wall"][key]])
+           # w_col_min = min([tup[1] for tup in params["wall"][key]])
+            #w_col_max = max([tup[1] for tup in params["wall"][key]])
+            #self.matrices[key][w_row_max - w_row_min, w_col_max - w_col_min] = 2
 
     def build(self):
         return self.matrices.values()
@@ -39,7 +49,8 @@ if __name__ == '__main__':
                           "V": [(70,50), (70,100), (100,50), (100, 100)]},
               "rozdzielczosc": {},
               "mask": {"I": 1, "II": 0, "III": 1, "IV": 1, "V": 1},
-              "wall":{}}
+              #"wall":{"I":[(0,49), (0,50), (50,49), (50,50)]}
+              }
 
     dom = Dom(params)
     print(dom.build2())
