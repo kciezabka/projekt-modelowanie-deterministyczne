@@ -14,9 +14,6 @@ class Dom:
             self.matrices[key] = np.zeros((row_max - row_min, col_max - col_min))
             mask = params["mask"][key]
             self.matrices[key][mask == 1] = 1
-            mask = params["mask"][key]
-            self.matrices[key][mask == 1] = 1
-
 
         self.bigmatrix = np.zeros((100, 100))
         for key in params["indexes"].keys():
